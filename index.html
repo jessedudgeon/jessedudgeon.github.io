@@ -45,29 +45,64 @@
                     <li class="nav-item">
                         <a class="nav-link" href="dnd.html">Dungeon's & Dragons</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cookbook.html">Cookbook</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container mt-3 mb-3 pb-2 rounded-3 bg-light">
-        <div id="aboutMe" class="container-fluid mt-3">
-            <h2 class="text-center">About Me</h2>
-            <p class="text-center">
-                Welcome to my personal website! I'm Jesse Dudgeon, a passionate IT professional with a love for
-                technology and innovation.
-                This site is a reflection of my interests, skills, and experiences. Feel free to explore my resume,
-                check out my farm adventures,
-                or dive into my fishing stories. Let's connect and share our passions!
-            </p>
-        </div>
+        <!-- Hero Section -->
+        <header class="text-center py-5">
+            <div class="container">
+                <h1 class="display-3 fw-bold">Welcome to Dudgeon's Domain</h1>
+                <p class="lead">A personal space for my passions, projects, and adventures.</p>
+                <a href="#about" class="btn btn-light btn-lg mt-3">Learn More</a>
+            </div>
+        </header>
 
+        <!-- About Section -->
+        <section id="about" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4">About Me</h2>
+                <p class="text-center fs-5">
+                    Hi, I'm Jesse Dudgeon — a passionate outdoorsman, creative thinker, and lifelong learner. Whether
+                    I'm out fishing, working on the farm, or diving into a Dungeons & Dragons campaign, I love sharing
+                    my experiences and connecting with others who enjoy the same.
+                </p>
+            </div>
+        </section>
 
-
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+        <!-- Featured Sections -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Explore My World</h2>
+                <div class="row text-center">
+                    <div class="col-md-4 mb-4">
+                        <i class="fas fa-fish fa-3x text-primary mb-3"></i>
+                        <h4>Fishing Adventures</h4>
+                        <p>Check out my favorite catches, tips, and scenic fishing spots.</p>
+                        <a href="fishing.html" class="btn btn-outline-primary">View Gallery</a>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <i class="fas fa-tractor fa-3x text-success mb-3"></i>
+                        <h4>Dudgeon's Farm</h4>
+                        <p>Learn about life on the farm, from crops to critters and everything in between.</p>
+                        <a href="dudgeonsfarm.html" class="btn btn-outline-success">Visit the Farm</a>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <i class="fas fa-dice-d20 fa-3x text-danger mb-3"></i>
+                        <h4>Dungeons & Dragons</h4>
+                        <p>Explore my campaigns, characters, and homebrew content for D&D.</p>
+                        <a href="dnd.html" class="btn btn-outline-danger">Roll Initiative</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
-
 </html>

@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe: Farmhouse Chili</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; background-color: #fdf6f0; }
+        h1, h2 { color: #8b0000; }
+        .container { max-width: 700px; margin: auto; background: #fff; padding: 2em; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        label, select { font-size: 1em; }
+        ul { list-style-type: none; padding-left: 0; }
+        li { margin-bottom: 0.5em; }
+        .steps { margin-top: 2em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Farmhouse Chili</h1>
+        <label for="servings">Select servings:</label>
+        <select id="servings" onchange="updateIngredients()">
+            <option value="2">2 servings</option>
+            <option value="4" selected>4 servings</option>
+            <option value="6">6 servings</option>
+            <option value="8">8 servings</option>
+        </select>
+
+        <h2>Ingredients</h2>
+        <ul id="ingredient-list">
+            <li data-base="1">1 lb ground beef</li>
+            <li data-base="1">1 can (15 oz) kidney beans</li>
+            <li data-base="1">1 can (15 oz) diced tomatoes</li>
+            <li data-base="0.5">0.5 cup chopped onion</li>
+            <li data-base="1">1 tbsp chili powder</li>
+            <li data-base="0.5">0.5 tsp salt</li>
+        </ul>
+
+        <div class="steps">
+            <h2>Instructions</h2>
+            <ol>
+                <li>In a large pot, brown the ground beef over medium heat.</li>
+                <li>Add chopped onions and cook until translucent.</li>
+                <li>Stir in beans, tomatoes, chili powder, and salt.</li>
+                <li>Simmer for 30 minutes, stirring occasionally.</li>
+                <li>Serve hot with your favorite toppings.</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function updateIngredients() {
+            const servings = parseInt(document.getElementById("servings").value);
+            const baseServings = 4;
+            const listItems = document.querySelectorAll("#ingredient-list li");
+
+            listItems.forEach(item => {
+                const baseAmount = parseFloat(item.getAttribute("data-base"));
+                const newAmount = (baseAmount * servings / baseServings).toFixed(2);
+                const text = item.textContent;
+                const ingredient = text.substring(text.indexOf(" ") + 1);
+                item.textContent = newAmount + " " + ingredient;
+                item.setAttribute("data-base", baseAmount); // retain base for future updates
+            });
+        }
+    </script>
+</body>
+</html>
