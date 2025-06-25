@@ -12,55 +12,18 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/3842d44a07.js" crossorigin="anonymous"></script>
-    <title>Dudgeon's Domain</title>
-
-
-    <style>
-        body,
-        html {
-            height: 100%;
-            margin: 0;
-            background: #000;
-            overflow: hidden;
-        }
-
-        .smoke {
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
-            animation: drift 20s infinite linear;
-            filter: blur(60px);
-            opacity: 0.6;
-        }
-
-        @keyframes drift {
-            0% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-
-            50% {
-                transform: translate(-40%, -60%) scale(1.2);
-            }
-
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-        }
-    </style>
-
-
-
+    <title>Jesse Dudgeon</title>
 </head>
 <!-- Page Background -->
 
 <body style="background: #40416d">
     <!-- All Page Content -->
     <div class="container mt-3 mb-3 pb-2 rounded-3 bg-light">
-        <!-- Navigation Bar -->
+
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-3">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">Dudgeon's Domain</a>
+                <a class="navbar-brand" href="#">MySite</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -79,30 +42,59 @@
                         <li class="nav-item">
                             <a class="nav-link" href="fishing.html">Fishing</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="dnd.html">Dungeon's & Dragons</a>
-                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-            <div id="aboutMe" class="container-fluid mt-3">
-                <h2 class="text-center">About Me</h2>
-                <p class="text-center">
-                    Welcome to my personal website! I'm Jesse Dudgeon, a passionate IT professional with a love for technology and innovation. 
-                    This site is a reflection of my interests, skills, and experiences. Feel free to explore my resume, check out my farm adventures, 
-                    or dive into my fishing stories. Let's connect and share our passions!
-                </p>
-                </div>
+
+<!-- Hero Section -->
+<header class="bg-light text-center py-5">
+  <div class="container">
+    <h1 class="display-4">Welcome to My Fishing Adventures</h1>
+    <p class="lead">Sharing my favorite fishing spots, catches, and tips!</p>
+    <a href="#gallery" class="btn btn-primary btn-lg">View Gallery</a>
+  </div>
+</header>
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Fishing Gallery</h2>
+    <div class="row g-4">
+      <div class="col-md-4">https://via.placeholder.com/350x250?text=Catch+1</div>
+      <div class="col-md-4">https://via.placeholder.com/350x250?text=Catch+2</div>
+      <div class="col-md-4">https://via.placeholder.com/350x250?text=Catch+3</div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Get in Touch</h2>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Your name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Your email">
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="4" placeholder="Your message"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+  </div>
+</section>
 
 
 
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
 </body>
-
 </html>
