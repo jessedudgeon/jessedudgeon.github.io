@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Fort Clash Card Template - Print Version</title>
+	<style>
+		@page {
+			size: 63mm 88mm;
+			margin: 3mm;
+		}
+
+		body {
+			background-color: #f0f0f0;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 1rem;
+		}
+
+		.card {
+			width: 63mm;
+			height: 88mm;
+			background: #fef9e7;
+			border: 2.5mm solid #333;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+			padding: 1mm;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 1rem;
+		}
+
+		.card-title {
+			font-size: 1.3rem;
+			font-weight: 700;
+			color: #4a3c1b;
+			background: #fff7e6;
+			padding: 2px 2px;
+			border: 1.5px solid #a52a2a;
+			border-radius: 6px;
+			text-align: center;
+			margin-bottom: 2px;
+			user-select: none;
+		}
+
+		.card-info {
+			font-size: 0.75rem;
+			color: #702020;
+
+			display: flex;
+			justify-content: space-around;
+
+			padding-bottom: 1px;
+		}
+
+		.card-info div {
+			font-weight: 600;
+		}
+
+		.card-art {
+			width: 100%;
+			height: 150px;
+			border: 1.5px solid #a52a2a;
+			background-color: #f9f3d7;
+			margin: 0 0 2px 0;
+			border-radius: 8px;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #a52a2a;
+			font-weight: 700;
+			font-size: 1.3rem;
+			user-select: none;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.card-art img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+
+		.card-art::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			box-shadow: inset 0 0 20px #fef9e7;
+			pointer-events: none;
+		}
+
+		.card-description {
+			font-size: 0.65rem;
+			color: #4a3c1b;
+			background-color: #fffbe3;
+			border: 1px solid #d4c99b;
+			border-radius: 6px;
+			padding: 3px 5px;
+			flex-grow: 1;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+		}
+
+
+		.card-stats {
+			display: flex;
+			justify-content: space-evenly;
+			font-size: 0.7rem;
+			font-weight: bold;
+			color: #4a3c1b;
+			background: #fffbe3;
+			border: 1px solid #d4c99b;
+			border-radius: 6px;
+			padding: 2px 0;
+			margin-bottom: 1px;
+		}
+
+		.stat {
+			width: 40%;
+			text-align: center;
+		}
+
+
+		.card-footer-meta {
+			display: flex;
+			justify-content: space-between;
+			font-size: 0.5rem;
+			color: #000000;
+			font-weight: 500;
+			padding-top: 2px;
+			user-select: none;
+		}
+
+		.rarity {
+			font-weight: bold;
+			color: #000000;
+			background-color: #fffbe3;
+			border-radius: 6px;
+			padding: 1px 3px;
+		}
+
+		button {
+			font-size: 1rem;
+			padding: 0.5rem 1rem;
+			background-color: #a52a2a;
+			color: white;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			user-select: none;
+			transition: background-color 0.3s ease;
+		}
+
+		button:hover {
+			background-color: #7d1b1b;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="card" id="card">
+		<div class="card-title" title="Card Name">Tunnel Rat</div>
+		<div class="card-art" id="card-art">
+			<img src="tunnel rat.png" />
+		</div>
+		<div class="card-info">
+			<div title="Type">Minion</div>
+			<div title="Cost">1 SP</div>
+			<div title="Initiative">1</div>
+		</div>
+		<div class="card-stats">
+			<div class="stat" title="Attack">⚔️ 1</div>
+			<div class="stat" title="Health">❤️ 2</div>
+		</div>
+		<div class="card-description" title="Card Description">
+			On deploy: Peek at top 3 cards of opponent's deck.
+		</div>
+		<div class="card-footer-meta">
+			<div title="Artist" style="font-style: italic;">Jesse Dudgeon ©2025</div>
+			<div class="rarity" title="Set-rarity">B25 ●</div>
+		</div>
+	</div>
+
+	<button id="downloadBtn">Download Card as PNG</button>
+
+	<!-- html2canvas CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+	<script>
+		document.getElementById('downloadBtn').addEventListener('click', () => {
+			const card = document.getElementById('card');
+			html2canvas(card, { scale: 3 }).then(canvas => {
+				// Create a link to download the image
+				const link = document.createElement('a');
+				link.download = 'fort_clash_card.png';
+				link.href = canvas.toDataURL('image/png');
+				link.click();
+			});
+		});
+	</script>
+
+</body>
+
+</html>
