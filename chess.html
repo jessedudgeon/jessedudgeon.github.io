@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remote Chess</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    #board {
+      width: 480px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" />
+</head>
+
+<body>
+  <div id="board"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0/chess.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+  <script>
+    const game = new Chess();
+
+    const board = Chessboard('board', {
+      draggable: true,
+      position: 'start',
+      onDrop: (source, target) => {
+        const move = game.move({ from: source, to: target, promotion: 'q' });
+
+        if (move === null) return 'snapback';
+
+        sendMove(source + target);
+      },
+      onSnapEnd: () => board.position(game.fen())
+    });
+
+    // --- Firebase Sync Logic ---
+    const roomId = new URLSearchParams(window.location.search).get('room') || prompt('Enter a room name:');
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "SENDER_ID",
+      appId: "APP_ID"
+    };
+
+    import('https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js').then(({ initializeApp }) => {
+      import('https://www.gstatic.com/firebasejs/10.7.2/firebase-database-compat.js').then(({ getDatabase, ref, onValue, set }) => {
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const movesRef = ref(db, `chessRooms/${roomId}/moves`);
+
+        onValue(movesRef, (snapshot) => {
+          const data = snapshot.val();
+          if (data) {
+            game.reset();
+            data.forEach(move => game.move(move));
+            board.position(game.fen());
+          }
+        });
+
+        window.sendMove = (uci) => {
+          const move = game.history();
+          set(movesRef, move);
+        };
+      });
+    });
+  </script>
+</body>
+
+</html>
