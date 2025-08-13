@@ -13,13 +13,39 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/3842d44a07.js" crossorigin="anonymous"></script>
     <title>Jesse's Resume</title>
+    <style>
+        @media print {
+
+            /* Hide the navbar and any elements you don't want */
+            nav,
+            footer,
+            .no-print {
+                display: none !important;
+            }
+
+            /* Optional: adjust container width for printing */
+            body {
+                background: #fff !important;
+                color: #000;
+            }
+
+            .container {
+                width: 100% !important;
+                max-width: none !important;
+            }
+        }
+    </style>
+
+
+
+
 </head>
 <!-- Page Background -->
 
 <body style="background: #40416d">
     <!-- All Page Content -->
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-3 no-print">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Dudgeon's Domain</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -70,69 +96,160 @@
         <!-- Profile -->
         <div class="container-fluid">
             <h3>Profile</h3>
-            <p>
-                Dynamic and results-driven IT Director with over 10 years of experience leading high-performing teams in
-                the technology sector.
-                Adept at developing and implementing innovative IT strategies that enhance operational efficiency and
-                drive business growth.
-                Proven track record of managing large-scale projects, optimizing IT infrastructure, and ensuring
-                cybersecurity compliance.
-                Exceptional leadership and communication skills, with a strong ability to build and mentor
-                cross-functional teams.
-                Committed to leveraging technology to deliver robust and scalable solutions that meet organizational
-                goals.
-                Seeking to bring expertise and visionary leadership to a forward-thinking organization.
-            </p>
-        </div>
-        <!-- Education -->
-        <div class="container-fluid">
-            <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-            <!-- School -->
-            <div class="container-fluid">
-                <div class="col">
-                    Indiana Tech - BA Information Systems - May 2013
-                </div>
+            <div class="border-start border-3 ps-3 ms-1">
+                <p>
+                    Strategic IT Executive with over a decade of success driving technology innovation, infrastructure
+                    modernization, and operational excellence in fast-paced, mission-critical environments. Expert in
+                    developing forward-thinking IT strategies that align with organizational goals, reduce costs, and
+                    improve efficiency. Proven leader of high-performing cross-functional teams, skilled in guiding
+                    large-scale implementations, enhancing cybersecurity resilience, and optimizing systems for peak
+                    reliability. Known for translating complex technical challenges into practical business solutions,
+                    fostering a culture of collaboration, and delivering measurable results that empower organizational
+                    growth.
+                </p>
             </div>
         </div>
+        <!-- Education -->
+        <div class="container-fluid mb-4">
+            <h3>Education</h3>
+            <div class="border-start border-3 ps-3 ms-1">
+                <h5 class="fw-bold mb-1">Bachelor of Arts in Information Systems</h5>
+                <div class="text-muted">Indiana Tech - May 2013</div>
+            </div>
+        </div>
+
         <!-- Work Experience -->
         <div class="container-fluid">
             <h3>Work Experience</h3>
-            <!-- Employeer -->
-            <div>
-                <div>
-                    Iris Family Support Center
+
+            <!-- Employer -->
+            <div class="border-start border-3 ps-3 ms-1">
+                <h5 class="fw-bold mb-1">Iris Family Support Center</h5>
+
+                <div class="mb-2">
+                    <span class="fw-bold">IT & Facilities Director</span> <span class="text-muted">2021 - Present</span>
+                    <ul class="ms-3">
+                        <li>Provide strategic leadership for all IT and facility operations, overseeing a multi-site
+                            nonprofit serving thousands of families annually.</li>
+                        <li>Designed and executed a 5-year technology modernization roadmap, improving operational
+                            efficiency and reducing annual costs by 20%.</li>
+                        <li>Negotiated and managed vendor contracts, saving the organization over $50,000 through
+                            cost-optimized technology procurement and services.</li>
+                        <li>Directed large-scale infrastructure upgrades, including a complete network overhaul that
+                            increased system uptime by 40% and eliminated recurring outages.</li>
+                        <li>Implemented advanced building security and monitoring systems, significantly enhancing staff
+                            and client safety.</li>
+                    </ul>
                 </div>
-                <!-- Role/Time Lines -->
+
+                <div class="mb-2">
+                    <span class="fw-bold">IT Manager</span> <span class="text-muted">2018 - 2021</span>
+                    <ul class="ms-3">
+                        <li>Led day-to-day IT operations for 100+ staff members across multiple locations, ensuring
+                            99.9% system availability.</li>
+                        <li>Established IT security protocols and disaster recovery procedures, minimizing cybersecurity
+                            risks and data loss potential.</li>
+                        <li>Managed multiple concurrent software migrations with zero unplanned downtime, including CRM
+                            and case management platforms.</li>
+                        <li>Streamlined help desk workflows, cutting average ticket resolution time from 3 days to under
+                            24 hours.</li>
+                        <li>Championed the transition to VoIP communications, reducing telecom costs by 25% while
+                            increasing call quality and reliability.</li>
+                    </ul>
+                </div>
+
                 <div>
+                    <span class="fw-bold">IT Support Specialist</span> <span class="text-muted">2015 - 2018</span>
+                    <ul class="ms-3">
+                        <li>Provided Tier 1-3 support, resolving 95% of technical issues on first contact for 100+ staff
+                            and volunteers.</li>
+                        <li>Successfully migrated on-premise email to a cloud platform, improving accessibility and
+                            reducing annual maintenance costs.</li>
+                        <li>Built and maintained asset management systems, improving equipment tracking accuracy and
+                            lifecycle planning.</li>
+                        <li>Implemented standardized onboarding technology setups, cutting new hire deployment time by
+                            50%.</li>
+                        <li>Supported organization-wide technology upgrades, including server migrations, endpoint
+                            refreshes, and network expansions.</li>
+                    </ul>
+                </div>
+
+
+                <!-- Employer -->
+                <div class="mb-3">
+                    <h5 class="fw-bold mb-1">FCC (Adams)</h5>
                     <div>
-                        IT & Facilities Director - 2021 - Present
+                        <span class="fw-bold">Systems Administrator</span> <span class="text-muted">2014 - 2015</span>
+                        <ul class="ms-3">
+                            <li>Administered and optimized enterprise-level Windows Server, Active Directory, and
+                                Exchange environments.</li>
+                            <li>Designed and implemented proactive monitoring systems, reducing outages by 20% and
+                                improving network performance.</li>
+                            <li>Developed and enforced IT policies and procedures, ensuring compliance with industry
+                                standards and best practices.</li>
+                            <li>Collaborated with cross-functional teams to ensure high system availability and fast
+                                resolution of critical issues.</li>
+                        </ul>
                     </div>
+                </div>
+
+                <!-- Employer -->
+                <div>
+                    <h5 class="fw-bold mb-1">Air National Guard</h5>
                     <div>
-                        IT Manager - 2018 - 2021
+                        <span class="fw-bold">Air Propulsion Systems Specialist</span> <span class="text-muted">2010 -
+                            2014</span>
+                        <ul class="ms-3">
+                            <li>Inspected, maintained, and repaired jet engines to Air Force standards.</li>
+                            <li>Performed advanced diagnostics and overhaul procedures, ensuring 100% operational
+                                readiness during active deployments.</li>
+                        </ul>
                     </div>
-                    <div>
-                        IT Support Specialist - 2015 - 2018
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div>
-                    FCC (Adams)
-                </div>
-                <div>
-                    Systems Administrator - 2014 - 2015
-                </div>
-            </div>
-            <div>
-                <div>
-                    Air National Guard
-                </div>
-                <div>
-                    Air Propulsion Systems Specialist - 2010 - 2014
                 </div>
             </div>
         </div>
-    </div>
+
+        <!-- Core Competencies -->
+        <div class="container-fluid mb-4">
+            <h3>Core Competencies</h3>
+            <div class="border-start border-3 ps-3 ms-1 row">
+                <div class="col-md-6 col-lg-4 mb-2">
+                    <ul class="list-unstyled mb-0">
+                        <li>IT Strategy & Governance</li>
+                        <li>Cybersecurity & Compliance</li>
+                        <li>Cloud Migration (Azure, O365)</li>
+                        <li>Infrastructure Modernization</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-2">
+                    <ul class="list-unstyled mb-0">
+                        <li>Vendor & Contract Negotiation</li>
+                        <li>Project Management (Agile/Waterfall)</li>
+                        <li>Disaster Recovery & Business Continuity</li>
+                        <li>Facilities Management & Security Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Achievements -->
+        <div class="container-fluid mb-4">
+            <h3>Key Achievements</h3>
+            <div class="border-start border-3 ps-3 ms-1">
+                <ul class="list-unstyled mb-0">
+                    <li><strong>Reduced IT costs by $50K annually</strong> through vendor consolidation and
+                        infrastructure optimization.</li>
+                    <li><strong>Increased network uptime by 40%</strong> by leading a complete infrastructure overhaul.
+                    </li>
+                    <li><strong>Designed and implemented security systems</strong> protecting 100+ employees and
+                        thousands of clients annually.</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
 
 </body>
 
