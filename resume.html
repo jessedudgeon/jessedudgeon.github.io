@@ -13,28 +13,46 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/3842d44a07.js" crossorigin="anonymous"></script>
     <title>Jesse's Resume</title>
-    <style>
-        @media print {
+<style>
+@media print {
+  @page {
+    /* Keep your page margins (applies to all pages) */
+    margin: 0.25in;
+  }
 
-            /* Hide the navbar and any elements you don't want */
-            nav,
-            footer,
-            .no-print {
-                display: none !important;
-            }
+  /* Rely on @page for margins; reset body margin */
+  body {
+    margin: 0 !important;
+    background: #fff !important;
+    color: #000;
+  }
 
-            /* Optional: adjust container width for printing */
-            body {
-                background: #fff !important;
-                color: #000;
-            }
+  /* Your printable wrapper (use .container or main—whichever wraps your resume) */
+  .container, main {
+    /* Add top padding that will clone at each page break */
+    padding-top: 0.25in !important;
 
-            .container {
-                width: 100% !important;
-                max-width: none !important;
-            }
-        }
-    </style>
+    /* Critical: makes padding/border repeat on each page fragment */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    /* Remove any max-width constraint if needed for print */
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Avoid double spacing if the first element had a top margin */
+  .container > *:first-child,
+  main > *:first-child {
+    margin-top: 0 !important;
+  }
+
+  /* Hide non-print elements */
+  nav, footer, .no-print {
+    display: none !important;
+  }
+}
+</style>
 
 
 
@@ -88,7 +106,8 @@
                 </div>
                 <!-- Contact Info -->
                 <div class="col text-end">
-                    <a href="mailto:jessedudgeon@gmail.com?subject=I saw your resume, lets talk!">jessedudgeon@gmail.com</a>
+                    <a
+                        href="mailto:jessedudgeon@gmail.com?subject=I saw your resume, lets talk!">jessedudgeon@gmail.com</a>
                 </div>
             </div>
         </div>
@@ -98,17 +117,41 @@
             <h3>Profile</h3>
             <div class="border-start border-3 ps-3 ms-1">
                 <p>
-                    Strategic IT Executive with over a decade of success driving technology innovation, infrastructure
-                    modernization, and operational excellence in fast-paced, mission-critical environments. Expert in
-                    developing forward-thinking IT strategies that align with organizational goals, reduce costs, and
-                    improve efficiency. Proven leader of high-performing cross-functional teams, skilled in guiding
-                    large-scale implementations, enhancing cybersecurity resilience, and optimizing systems for peak
-                    reliability. Known for translating complex technical challenges into practical business solutions,
-                    fostering a culture of collaboration, and delivering measurable results that empower organizational
-                    growth.
+                    Strategic IT executive with 10+ years leading modernization, cybersecurity, and operations across
+                    multi-site, mission-driven organizations. Known for building high-performing teams, translating
+                    complex problems into business outcomes, and delivering measurable impact-cost reductions, uptime
+                    gains, and safer, smarter workplaces. Combines executive leadership with hands-on expertise across
+                    Azure/M365, networking, automation, and custom application development.
                 </p>
             </div>
         </div>
+
+                <!-- Core Competencies -->
+        <div class="container-fluid mb-4">
+            <h3>Core Competencies</h3>
+            <div class="border-start border-3 ps-3 ms-1 row">
+                <div class="col-md-6 col-lg-4 mb-2">
+                    <ul class="list-unstyled mb-0">
+                        <li>IT Strategy & Roadmaps</li>
+                        <li>Cybersecurity & Compliance</li>
+                        <li>Cloud Migration (Azure, O365)</li>
+                        <li>Infrastructure Modernization</li>
+                        <li>Automation (Power Automate, PowerShell)</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-2">
+                    <ul class="list-unstyled mb-0">
+                        <li>Vendor & Contract Negotiation</li>
+                        <li>Program & Project Management</li>
+                        <li>Disaster Recovery & Business Continuity</li>
+                        <li>Facilities & Physical Security</li>
+                        <li>Stakeholder Communication</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Education -->
         <div class="container-fluid mb-4">
             <h3>Education</h3>
@@ -127,50 +170,33 @@
                 <h5 class="fw-bold mb-1">Iris Family Support Center</h5>
 
                 <div class="mb-2">
-                    <span class="fw-bold">IT & Facilities Director</span> <span class="text-muted">2021 - Present</span>
+                    <span class="fw-bold">IT & Facilities Director</span> <span class="text-muted">2020 - Present</span>
                     <ul class="ms-3">
-                        <li>Provide strategic leadership for all IT and facility operations, overseeing a multi-site
-                            nonprofit serving thousands of families annually.</li>
-                        <li>Designed and executed a 5-year technology modernization roadmap, improving operational
-                            efficiency and reducing annual costs by 20%.</li>
-                        <li>Negotiated and managed vendor contracts, saving the organization over $50,000 through
-                            cost-optimized technology procurement and services.</li>
-                        <li>Directed large-scale infrastructure upgrades, including a complete network overhaul that
-                            increased system uptime by 40% and eliminated recurring outages.</li>
-                        <li>Implemented advanced building security and monitoring systems, significantly enhancing staff
-                            and client safety.</li>
+                        <li>Provide executive leadership for IT and facilities operations serving 100+ staff across multiple locations.</li>
+                        <li>Own IT strategy, budget, governance, and risk management; chair/serve on safety, training, and strategic planning committees.</li>
+                        <li>Led cloud-first transformation across Azure AD (Entra), M365, SharePoint Online, Teams, OneDrive, and Exchange Online.</li>
+                        <li>Implemented physical security (access control, surveillance) and building systems monitoring to strengthen safety and compliance.</li>
+                        <li>Negotiated contracts and managed vendors; improved delivery performance and reduced total cost of ownership.</li>
                     </ul>
                 </div>
 
                 <div class="mb-2">
-                    <span class="fw-bold">IT Manager</span> <span class="text-muted">2018 - 2021</span>
+                    <span class="fw-bold">IT Manager</span> <span class="text-muted">2014 - 2020</span>
                     <ul class="ms-3">
-                        <li>Led day-to-day IT operations for 100+ staff members across multiple locations, ensuring
-                            99.9% system availability.</li>
-                        <li>Established IT security protocols and disaster recovery procedures, minimizing cybersecurity
-                            risks and data loss potential.</li>
-                        <li>Managed multiple concurrent software migrations with zero unplanned downtime, including CRM
-                            and case management platforms.</li>
-                        <li>Streamlined help desk workflows, cutting average ticket resolution time from 3 days to under
-                            24 hours.</li>
-                        <li>Championed the transition to VoIP communications, reducing telecom costs by 25% while
-                            increasing call quality and reliability.</li>
+                        <li>Directed day-to-day operations, service desk, and systems administration for a 100+ user environment (multi-site).</li>
+                        <li>Standardized onboarding and imaging to cut new-hire time-to-productive by ~50%.</li>
+                        <li>Planned and executed migrations to cloud services with zero unplanned downtime (CRM/case management and core productivity).</li>
+                        <li>Established IT policies/procedures, DR playbooks, and security baselines (MFA, password manager, device hardening).</li>
+                        <li>Championed VoIP transition improving call quality/reliability while reducing telecom spend ~25%</li>
                     </ul>
                 </div>
 
                 <div>
-                    <span class="fw-bold">Systems Administrator</span> <span class="text-muted">2015 - 2018</span>
+                    <span class="fw-bold">Systems Administrator</span> <span class="text-muted">2013 - 2014</span>
                     <ul class="ms-3">
-                        <li>Provided Tier 1-3 support, resolving 95% of technical issues on first contact for 100+ staff
-                            and volunteers.</li>
-                        <li>Successfully migrated on-premise email to a cloud platform, improving accessibility and
-                            reducing annual maintenance costs.</li>
-                        <li>Built and maintained asset management systems, improving equipment tracking accuracy and
-                            lifecycle planning.</li>
-                        <li>Implemented standardized onboarding technology setups, cutting new hire deployment time by
-                            50%.</li>
-                        <li>Supported organization-wide technology upgrades, including server migrations, endpoint
-                            refreshes, and network expansions.</li>
+                        <li>Consolidated and virtualized aging on-prem servers to improve availability and manageability.</li>
+                        <li>Connected offices via secure site-to-site VPN; deployed standardized firewalls and network services (DNS/DHCP).</li>
+                        <li>Built internal tools for automation, reporting, and tracking to streamline operations.</li>
                     </ul>
                 </div>
 
@@ -179,7 +205,7 @@
                 <div class="mb-3">
                     <h5 class="fw-bold mb-1">FCC (Adams)</h5>
                     <div>
-                        <span class="fw-bold">Systems Administrator</span> <span class="text-muted">2014 - 2015</span>
+                        <span class="fw-bold">Systems Administrator</span> <span class="text-muted">2010 - 2013</span>
                         <ul class="ms-3">
                             <li>Administered and optimized enterprise-level Windows Server, Active Directory, and
                                 Exchange environments.</li>
@@ -187,8 +213,7 @@
                                 improving network performance.</li>
                             <li>Developed and enforced IT policies and procedures, ensuring compliance with industry
                                 standards and best practices.</li>
-                            <li>Collaborated with cross-functional teams to ensure high system availability and fast
-                                resolution of critical issues.</li>
+                            <li>Developed OEE tracking and multi-department budget tools to improve visibility and throughput.</li>
                         </ul>
                     </div>
                 </div>
@@ -197,7 +222,7 @@
                 <div>
                     <h5 class="fw-bold mb-1">Air National Guard</h5>
                     <div>
-                        <span class="fw-bold">Air Propulsion Systems Specialist</span> <span class="text-muted">2010 -
+                        <span class="fw-bold">Air Propulsion Systems Specialist</span> <span class="text-muted">2008 -
                             2014</span>
                         <ul class="ms-3">
                             <li>Inspected, maintained, and repaired jet engines to Air Force standards.</li>
@@ -209,44 +234,36 @@
             </div>
         </div>
 
-        <!-- Core Competencies -->
-        <div class="container-fluid mb-4">
-            <h3>Core Competencies</h3>
-            <div class="border-start border-3 ps-3 ms-1 row">
-                <div class="col-md-6 col-lg-4 mb-2">
-                    <ul class="list-unstyled mb-0">
-                        <li>IT Strategy & Governance</li>
-                        <li>Cybersecurity & Compliance</li>
-                        <li>Cloud Migration (Azure, O365)</li>
-                        <li>Infrastructure Modernization</li>
-                    </ul>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-2">
-                    <ul class="list-unstyled mb-0">
-                        <li>Vendor & Contract Negotiation</li>
-                        <li>Project Management (Agile/Waterfall)</li>
-                        <li>Disaster Recovery & Business Continuity</li>
-                        <li>Facilities Management & Security Systems</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
 
         <!-- Key Achievements -->
         <div class="container-fluid mb-4">
             <h3>Key Achievements</h3>
             <div class="border-start border-3 ps-3 ms-1">
                 <ul class="list-unstyled mb-0">
-                    <li><strong>Reduced IT costs by $50K annually</strong> through vendor consolidation and
-                        infrastructure optimization.</li>
-                    <li><strong>Increased network uptime by 40%</strong> by leading a complete infrastructure overhaul.
-                    </li>
-                    <li><strong>Designed and implemented security systems</strong> protecting 100+ employees and
-                        thousands of clients annually.</li>
+                    <li>Designed and launched a custom case management system (C#, ASP.NET, MS SQL) to streamline records and reporting.</li>
+                    <li>Built a multi-purpose management platform (Laravel/PHP/MySQL) for training, volunteer hours, and fundraising tracking.</li>
+                    <li>Created user-managed mass SMS communications via Twilio API for rapid, reliable outreach.</li>
+                    <li>Implemented a self-service HR system, reducing manual administration and saving ~$55K annually.</li>
+                    <li>Established a formal service desk with ticketing, knowledge base, and metrics to drive continuous improvement.</li>
                 </ul>
             </div>
         </div>
 
+
+        <!-- Technical Skills -->
+        <div class="container-fluid mb-4">
+            <h3>Technical Skills</h3>
+            <div class="border-start border-3 ps-3 ms-1">
+                <ul class="list-unstyled mb-0">
+                    <li>Cloud & Identity: Azure, Azure AD (Entra ID), Intune; M365 admin (Exchange Online, SharePoint Online, Teams, OneDrive).</li>
+                    <li>Security & Networking: Firewalls, VPN (site/client), MFA, password managers, DNS/DHCP, LAN/WAN, monitoring.</li>
+                    <li>Modern Workplace: Device provisioning, imaging, GPO/baselines, endpoint management, collaboration suites.</li>
+                    <li>Dev & Automation: Power Automate, PowerShell; C#, ASP.NET, PHP (Laravel), JavaScript; Git, CI basics.</li>
+                    <li>Data & Platforms: MS SQL, MySQL; virtualization, server OS, print services; asset & inventory management.</li>
+                </ul>
+            </div>
+        </div>
 
 
 
