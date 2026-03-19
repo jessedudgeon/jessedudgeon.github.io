@@ -1,0 +1,110 @@
+/* Core styles for the Sudoku app */
+
+/* Container for the 9×9 grid. We use CSS Grid so cells are automatically
+   arranged into nine equal columns. A maximum width constrains the board
+   size while allowing it to shrink on small screens. */
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  max-width: 540px;
+  margin: 0 auto;
+  border: 3px solid #000;
+  background-color: #fff;
+}
+
+/* Each individual cell in the Sudoku grid. We maintain a square shape via
+   aspect-ratio and center the content with flexbox. A subtle border
+   outlines each cell; thicker borders are applied via additional classes. */
+.sudoku-cell {
+  position: relative;
+  aspect-ratio: 1;
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+}
+
+/* Thick border modifiers for delineating 3×3 subgrids and the outer frame. */
+.top-border-thick {
+  border-top-width: 3px;
+}
+.left-border-thick {
+  border-left-width: 3px;
+}
+.right-border-thick {
+  border-right-width: 3px;
+}
+.bottom-border-thick {
+  border-bottom-width: 3px;
+}
+
+/* Fixed (given) numbers are bold and slightly darker on a light background. */
+.fixed {
+  font-weight: 600;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* Editable cells are blue; notes are grey. */
+.editable {
+  color: #0d6efd;
+}
+
+/* Highlight for the currently selected cell. We use box-shadow to avoid
+   changing the cell's size. */
+.selected {
+  box-shadow: inset 0 0 0 2px #0d6efd;
+  z-index: 1;
+}
+
+/* Highlight the row, column and 3×3 box of the selected cell. */
+.highlight-area {
+  background-color: #e9f5ff;
+}
+
+/* Highlight all cells containing the same number as the selected cell. */
+.highlight-same {
+  background-color: #d1e7dd;
+}
+
+/* Duplicate numbers (conflicting values in the same row/col/box). */
+.duplicate {
+  background-color: #f8d7da;
+}
+
+/* Cells with incorrect entries when auto‑check is enabled. */
+.error {
+  color: #dc3545;
+}
+
+/* Container for small pencil notes. A 3×3 grid ensures numbers align
+   consistently within the cell. */
+.notes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Individual note numbers. Reduced font size and subtle colour keep
+   notes unobtrusive. */
+.notes span {
+  font-size: 0.6rem;
+  color: #6c757d;
+  line-height: 1;
+}
+
+/* Status message styling */
+#status {
+  min-height: 1.5rem;
+  font-size: 1rem;
+  color: #198754;
+}
