@@ -1,0 +1,137 @@
+:root {
+  --site-bg: #202737;
+  --site-surface: #ffffff;
+  --site-surface-soft: #f5f7fa;
+  --site-text: #1f2937;
+  --site-muted: #667085;
+  --site-accent: #315a7d;
+  --site-border: #d9e1e8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--site-bg);
+  color: var(--site-text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  line-height: 1.55;
+}
+
+.navbar {
+  border-radius: 0 !important;
+}
+
+.site-shell {
+  max-width: 1120px;
+  margin: 1.25rem auto 2rem;
+  background: var(--site-surface);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .22);
+}
+
+.site-hero {
+  padding: 4.5rem 2rem 3.5rem;
+  background: linear-gradient(145deg, #eef3f8, #fff);
+  border-bottom: 1px solid var(--site-border);
+}
+
+.site-hero h1 {
+  font-weight: 750;
+  letter-spacing: -.04em;
+}
+
+.site-hero .lead {
+  max-width: 760px;
+  color: var(--site-muted);
+}
+
+.site-section {
+  padding: 3rem 2rem;
+}
+
+.site-section.soft {
+  background: var(--site-surface-soft);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card {
+  height: 100%;
+  padding: 1.5rem;
+  border: 1px solid var(--site-border);
+  border-radius: .85rem;
+  background: #fff;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(31, 41, 55, .08);
+}
+
+.feature-card h3,
+.feature-card h4 {
+  font-weight: 700;
+}
+
+.feature-card p,
+.page-intro {
+  color: var(--site-muted);
+}
+
+.icon-circle {
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eaf0f6;
+  color: var(--site-accent);
+  margin-bottom: 1rem;
+}
+
+.placeholder-panel {
+  border: 1px dashed #aeb9c5;
+  border-radius: .85rem;
+  padding: 2rem;
+  background: #fafbfc;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+footer {
+  padding: 1.4rem 2rem;
+  border-top: 1px solid var(--site-border);
+  color: var(--site-muted);
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .site-shell {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .site-hero,
+  .site-section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .gallery-image {
+    height: 360px;
+  }
+}
