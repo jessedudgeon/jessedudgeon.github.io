@@ -1,143 +1,74 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/3842d44a07.js" crossorigin="anonymous"></script>
-    <title>Jesse Dudgeon</title>
-    <style>
-        .carousel-inner img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fishing trips and favorite catches from Jesse Dudgeon.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <title>Fishing | Dudgeon's Domain</title>
 </head>
-<!-- Page Background -->
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Dudgeon's Domain</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="fishing.html">Fishing</a></li>
+          <li class="nav-item"><a class="nav-link" href="dudgeonsfarm.html">Farm</a></li>
+          <li class="nav-item"><a class="nav-link" href="dnd.html">D&amp;D</a></li>
+          <li class="nav-item"><a class="nav-link" href="Sudoku/index.html">Sudoku</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<body style="background: #40416d">
-    <!-- All Page Content -->
+  <main class="site-shell">
+    <header class="site-hero">
+      <p class="text-uppercase fw-semibold text-secondary mb-2">On the water</p>
+      <h1 class="display-4">Fishing</h1>
+      <p class="lead mb-0">A small collection of memorable trips and catches.</p>
+    </header>
 
-
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Dudgeon's Domain</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="resume.html">Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dudgeonsfarm.html">Dudgeon's Farm</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="fishing.html">Fishing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dnd.html">Dungeon's & Dragons</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cookbook.html">Cookbook</a>
-                    </li>
-                </ul>
-            </div>
+    <section class="site-section">
+      <div id="fishingGallery" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#fishingGallery" data-bs-slide-to="0" class="active" aria-current="true" aria-label="2024 Walleye Trip"></button>
+          <button type="button" data-bs-target="#fishingGallery" data-bs-slide-to="1" aria-label="2023 Personal Best Walleye"></button>
+          <button type="button" data-bs-target="#fishingGallery" data-bs-slide-to="2" aria-label="2024 Walleye on Boat"></button>
+          <button type="button" data-bs-target="#fishingGallery" data-bs-slide-to="3" aria-label="2023 Walleye Trip"></button>
         </div>
-    </nav>
-    <div class="container mt-3 mb-3 pb-2 rounded-3 bg-light">
+        <div class="carousel-inner rounded-3 overflow-hidden">
+          <div class="carousel-item active">
+            <img src="img/fishing/2024 Walleye Trip.png" class="gallery-image" alt="Walleye fishing trip in 2024">
+          </div>
+          <div class="carousel-item">
+            <img src="img/fishing/2023 PB Walleye.png" class="gallery-image" alt="Personal best walleye from 2023">
+          </div>
+          <div class="carousel-item">
+            <img src="img/fishing/2024 Walleye On Boat.png" class="gallery-image" alt="Walleye on the boat in 2024">
+          </div>
+          <div class="carousel-item">
+            <img src="img/fishing/2023 Walleye Trip.png" class="gallery-image" alt="Walleye fishing trip in 2023">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#fishingGallery" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#fishingGallery" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
 
-        <!-- Hero Section -->
-        <header class="bg-light text-center py-5">
-            <div class="container">
-                <h1 class="display-4">Welcome to My Fishing Adventures</h1>
-                <p class="lead">Sharing my favorite fishing spots, catches, and tips!</p>
-                <a href="#gallery" class="btn btn-primary btn-lg">View Gallery</a>
-            </div>
-        </header>
+    <footer>&copy; 2026 Jesse Dudgeon</footer>
+  </main>
 
-        <!-- Gallery Section -->
-        <section id="gallery">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                        aria-label="Slide 4"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="img/fishing/2024 Walleye Trip.png" class="img-fluid" alt="2024 Walleye Trip">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/fishing/2023 PB Walleye.png" class="img-fluid" alt="2023 PB Walleye">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/fishing/2024 Walleye On Boat.png" class="img-fluid" alt="2024 Walleye On Boat">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/fishing/2023 Walleye Trip.png" class="img-fluid" alt="2023 Walleye Trip">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="bg-light py-5">
-            <div class="container">
-                <h2 class="text-center mb-4">Get in Touch</h2>
-                <form>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Your name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Your email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Your message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send</button>
-                </form>
-            </div>
-        </section>
-
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-
 </html>
