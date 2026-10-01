@@ -1,64 +1,192 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
+    <meta name="description" content="Jesse Dudgeon - Network and infrastructure leader with experience in higher education, nonprofit, manufacturing, and military environments.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/3842d44a07.js" crossorigin="anonymous"></script>
-    <title>Jesse Dudgeon Resume</title>
-<style>
-@media print {
-  @page {
-    /* Keep your page margins (applies to all pages) */
-    margin: 0.25in;
-  }
+    <title>Jesse Dudgeon | Resume</title>
+    <style>
+        :root {
+            --resume-ink: #1f2937;
+            --resume-muted: #5f6b7a;
+            --resume-accent: #315a7d;
+            --resume-border: #d9e1e8;
+        }
 
-  /* Rely on @page for margins; reset body margin */
-  body {
-    margin: 0 !important;
-    background: #fff !important;
-    color: #000;
-  }
+        body {
+            background: #343a40;
+            color: var(--resume-ink);
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            line-height: 1.45;
+        }
 
-  /* Your printable wrapper (use .container or main—whichever wraps your resume) */
-  .container, main {
-    /* Add top padding that will clone at each page break */
-    padding-top: 0.25in !important;
+        .resume-sheet {
+            max-width: 1080px;
+            margin: 1rem auto;
+            background: #fff;
+            border-radius: .75rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,.18);
+            padding: 2rem 2.25rem;
+        }
 
-    /* Critical: makes padding/border repeat on each page fragment */
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
+        .resume-header {
+            border-bottom: 2px solid var(--resume-accent);
+            padding-bottom: 1rem;
+            margin-bottom: 1.25rem;
+        }
 
-    /* Remove any max-width constraint if needed for print */
-    width: 100% !important;
-    max-width: none !important;
-  }
+        .resume-header h1 {
+            margin: 0;
+            font-size: 2.75rem;
+            font-weight: 700;
+            letter-spacing: -.04em;
+        }
 
-  /* Avoid double spacing if the first element had a top margin */
-  .container > *:first-child,
-  main > *:first-child {
-    margin-top: 0 !important;
-  }
+        .headline {
+            color: var(--resume-accent);
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: .2rem;
+        }
 
-  /* Hide non-print elements */
-  nav, footer, .no-print {
-    display: none !important;
-  }
-}
-</style>
+        .contact a {
+            color: var(--resume-ink);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--resume-accent);
+            border-bottom: 1px solid var(--resume-border);
+            padding-bottom: .35rem;
+            margin: 1.25rem 0 .7rem;
+        }
+
+        .role {
+            margin-bottom: 1rem;
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .employer {
+            font-size: 1.08rem;
+            font-weight: 700;
+        }
+
+        .title {
+            font-weight: 600;
+        }
+
+        .dates {
+            color: var(--resume-muted);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        ul {
+            margin-top: .4rem;
+            margin-bottom: .5rem;
+        }
+
+        li {
+            margin-bottom: .25rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: .3rem 1.5rem;
+        }
+
+        .skills-grid div::before {
+            content: "•";
+            margin-right: .45rem;
+            color: var(--resume-accent);
+        }
+
+        .muted {
+            color: var(--resume-muted);
+        }
+
+        @media (max-width: 700px) {
+            .resume-sheet {
+                margin: 0;
+                border-radius: 0;
+                padding: 1.25rem;
+            }
+
+            .resume-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            @page {
+                size: letter;
+                margin: .45in;
+            }
+
+            body {
+                background: #fff !important;
+                color: #000;
+                font-size: 10.5pt;
+            }
+
+            nav,
+            .no-print {
+                display: none !important;
+            }
+
+            .resume-sheet {
+                max-width: none;
+                margin: 0;
+                padding: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .resume-header h1 {
+                font-size: 24pt;
+            }
+
+            h2 {
+                font-size: 11.5pt;
+                break-after: avoid;
+            }
+
+            .role,
+            .education-entry {
+                break-inside: avoid;
+            }
+
+            a {
+                color: #000 !important;
+                text-decoration: none !important;
+            }
+        }
+    </style>
 </head>
-
-<!-- Page Background -->
-<body style="background: #40416d">
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-3 no-print">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark no-print">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Dudgeon's Domain</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -67,213 +195,182 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="resume.html">Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dudgeonsfarm.html">Dudgeon's Farm</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="fishing.html">Fishing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dnd.html">Dungeon's & Dragons</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cookbook.html">Cookbook</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dudgeonsfarm.html">Dudgeon's Farm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fishing.html">Fishing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dnd.html">Dungeons &amp; Dragons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cookbook.html">Cookbook</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-3 mb-3 pb-2 rounded-3 bg-light">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <!-- Name -->
-                <div class="col text-start">
-                    <figure>
-                        <h2 class="display-2">Jesse Dudgeon</h2>
-                        <figcaption class="blockquote-footer">Information Systems Leadership</figcaption>
-                    </figure>
+    <main class="resume-sheet">
+        <header class="resume-header">
+            <div class="row align-items-end g-3">
+                <div class="col-md-8">
+                    <h1>Jesse Dudgeon</h1>
+                    <div class="headline">Network &amp; Infrastructure Leader</div>
                 </div>
-                <!-- Contact Info -->
-                <div class="col text-end">
-                    <a href="mailto:jessedudgeon@gmail.com?subject=I saw your resume, lets talk!">jessedudgeon@gmail.com</a>
+                <div class="col-md-4 text-md-end contact">
+                    <a href="mailto:jessedudgeon@gmail.com">jessedudgeon@gmail.com</a>
                 </div>
             </div>
-        </div>
+        </header>
 
-        <!-- Profile -->
-        <div class="container-fluid">
-            <h3>Profile</h3>
-            <div class="border-start border-3 ps-3 ms-1">
-                <p>
-                    Strategic IT executive with 12+ years of progressive leadership driving digital transformation,
-                    cybersecurity maturity, and operational excellence across multi-site, mission-driven organizations.
-                    Proven record of reducing risk, modernizing infrastructure, and delivering measurable business
-                    outcomes—including 99.9% uptime, 60% workflow acceleration, and six-figure cost savings. Blends
-                    executive strategy with hands-on technical depth across Microsoft cloud, identity, security,
-                    automation, and custom application development.
-                </p>
+        <section>
+            <h2>Professional Summary</h2>
+            <p class="mb-0">
+                Network and IT infrastructure leader with 16+ years of experience across higher education, nonprofit,
+                manufacturing, and military environments. Leads multi-campus networking, telecommunications, security,
+                infrastructure modernization, and technical teams while remaining hands-on with complex routing,
+                switching, firewalls, wireless, voice, identity, and endpoint platforms. Experienced in stabilizing
+                inherited environments, reducing operational risk, improving documentation and standards, and translating
+                technical priorities into reliable services and practical investment decisions.
+            </p>
+        </section>
+
+        <section>
+            <h2>Core Expertise</h2>
+            <div class="skills-grid">
+                <div>Network architecture, routing, VLANs &amp; WAN connectivity</div>
+                <div>Palo Alto firewalls, GlobalProtect &amp; site-to-site VPN</div>
+                <div>Aruba, Cisco &amp; HPE switching and wireless</div>
+                <div>Cisco CUCM, Unity &amp; Microsoft Teams Phone</div>
+                <div>DNS, DHCP, segmentation &amp; network services</div>
+                <div>Cybersecurity, vulnerability remediation &amp; hardening</div>
+                <div>Microsoft 365, Entra ID, Intune &amp; endpoint management</div>
+                <div>Team leadership, mentoring &amp; technical operations</div>
+                <div>Infrastructure lifecycle, budgeting &amp; vendor management</div>
+                <div>Documentation, incident response &amp; business continuity</div>
             </div>
-        </div>
+        </section>
 
-        <!-- Strategic Leadership Highlights -->
-        <div class="container-fluid mb-4">
-            <h3>Strategic Leadership Highlights</h3>
-            <div class="border-start border-3 ps-3 ms-1">
-                <ul class="mb-0">
-                    <li>Led cloud-first modernization to Microsoft ecosystem (Entra ID, M365, SharePoint, Teams, Exchange), improving resiliency and collaboration.</li>
-                    <li>Established cybersecurity baselines and risk management practices (MFA, device hardening, phishing defense), reducing phishing susceptibility by 15%.</li>
-                    <li>Digitized 100% of internal forms and workflows, cutting paper usage by 100 reams annually and improving processing speed by 60%.</li>
-                    <li>Built structured service desk operations with KPIs, ticketing, and knowledge base to drive measurable service quality improvements.</li>
-                    <li>Eliminated recurring outages through infrastructure upgrades and proactive monitoring, achieving 99.9% uptime.</li>
-                </ul>
-            </div>
-        </div>
+        <section>
+            <h2>Professional Experience</h2>
 
-        <!-- Core Competencies -->
-        <div class="container-fluid mb-4">
-            <h3>Core Competencies</h3>
-            <div class="border-start border-3 ps-3 ms-1 row">
-                <div class="col-md-6 col-lg-4 mb-2">
-                    <ul class="list-unstyled mb-0">
-                        <li>IT Strategy & Roadmaps</li>
-                        <li>Cybersecurity & Compliance</li>
-                        <li>Cloud Migration (Azure, M365)</li>
-                        <li>Infrastructure Modernization</li>
-                        <li>Automation (Power Automate, PowerShell)</li>
-                    </ul>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-2">
-                    <ul class="list-unstyled mb-0">
-                        <li>Vendor & Contract Negotiation</li>
-                        <li>Program & Project Management</li>
-                        <li>Disaster Recovery & Business Continuity</li>
-                        <li>Facilities & Physical Security</li>
-                        <li>Executive & Stakeholder Communication</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Education -->
-        <div class="container-fluid mb-4">
-            <h3>Education</h3>
-            <div class="border-start border-3 ps-3 ms-1">
-                <h5 class="fw-bold mb-1">Bachelor of Arts in Information Systems</h5>
-                <div class="text-muted">Indiana Tech - May 2013</div>
-            </div>
-        </div>
-
-        <!-- Work Experience -->
-        <div class="container-fluid">
-            <h3>Work Experience</h3>
-
-            <div class="border-start border-3 ps-3 ms-1">
-                <h5 class="fw-bold mb-1">Iris Family Support Center</h5>
-
-                <div class="mb-2">
-                    <span class="fw-bold">IT & Facilities Director</span> <span class="text-muted">2020 - Present</span>
-                    <ul class="ms-3">
-                        <li>Provide executive leadership for enterprise technology, cybersecurity, facilities, and physical security operations supporting 100+ staff across multiple sites.</li>
-                        <li>Own technology strategy, governance, risk management, and modernization roadmap aligned with organizational goals and mission delivery.</li>
-                        <li>Direct IT and facilities budgeting, vendor strategy, contract negotiation, and cost optimization initiatives to reduce total cost of ownership.</li>
-                        <li>Established cybersecurity posture aligned with NIST-based best practices and modern identity security standards (MFA, device hardening, access controls).</li>
-                        <li>Led cloud-first transformation across Entra ID (Azure AD), Microsoft 365, SharePoint Online, Teams, OneDrive, and Exchange Online to improve resiliency and collaboration.</li>
-                        <li>Reduced phishing susceptibility by 15% through awareness initiatives and technical safeguards, lowering organizational cyber risk exposure.</li>
-                        <li>Implemented physical security (access control, surveillance) and building systems monitoring to strengthen safety, incident response, and compliance.</li>
-                        <li>Built formal service desk operations with KPI tracking and performance analytics to drive accountability and service excellence.</li>
-                        <li>Digitized 100% of internal forms and operational workflows, cutting paper usage by 100 reams annually and improving processing speed by 60%.</li>
-                        <li>Serve as strategic advisor to executive leadership on technology risk, infrastructure investments, and operational scalability.</li>
-                        <!-- Optional (highly recommended): add scale metrics when available -->
-                        <!-- <li>Directed $X annual budget; led a team of X; managed X vendors; supported X endpoints across X locations.</li> -->
-                    </ul>
-                </div>
-
-                <div class="mb-2">
-                    <span class="fw-bold">IT Manager</span> <span class="text-muted">2014 - 2020</span>
-                    <ul class="ms-3">
-                        <li>Directed IT operations, service desk, and systems administration for a 100+ user, multi-site environment.</li>
-                        <li>Standardized onboarding, device imaging, and provisioning processes, cutting new-hire time-to-productivity by ~50%.</li>
-                        <li>Planned and executed migrations to cloud services with zero unplanned downtime (CRM/case management and core productivity).</li>
-                        <li>Established foundational IT governance: policies/procedures, DR playbooks, and security baselines (MFA, password manager, device hardening).</li>
-                        <li>Championed VoIP transition, improving reliability and call quality while reducing telecom spend by ~25%.</li>
-                        <li>Led organization-wide migration to Microsoft 365 with zero downtime, improving collaboration and reducing legacy system costs.</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <span class="fw-bold">Systems Administrator</span> <span class="text-muted">2013 - 2014</span>
-                    <ul class="ms-3">
-                        <li>Consolidated and virtualized aging on-prem servers to improve scalability, availability, and manageability.</li>
-                        <li>Connected offices via secure site-to-site VPN; deployed standardized firewalls and core network services (DNS/DHCP).</li>
-                        <li>Built internal tools for automation, reporting, and tracking to streamline operations and reduce manual overhead.</li>
-                        <li>Eliminated recurring weekly outages through root cause analysis, infrastructure upgrades, and proactive monitoring—achieving 99.9% uptime and restoring user confidence.</li>
-                    </ul>
-                </div>
-
-                <!-- Employer -->
-                <div class="mb-3 mt-3">
-                    <h5 class="fw-bold mb-1">FCC (Adams)</h5>
+            <div class="role">
+                <div class="role-header">
                     <div>
-                        <span class="fw-bold">Systems Administrator</span> <span class="text-muted">2010 - 2013</span>
-                        <ul class="ms-3">
-                            <li>Administered and optimized enterprise Windows Server, Active Directory, and Exchange environments.</li>
-                            <li>Designed and implemented proactive monitoring systems, reducing outages by 20% and improving network performance.</li>
-                            <li>Developed and enforced IT policies and procedures aligned with industry best practices to strengthen governance and consistency.</li>
-                            <li>Developed OEE tracking and multi-department budget tools to improve operational visibility and throughput.</li>
-                        </ul>
+                        <div class="employer">University of Saint Francis</div>
+                        <div class="title">Network Manager</div>
                     </div>
+                    <div class="dates">2026 - Present</div>
                 </div>
+                <ul>
+                    <li>Lead network and telecommunications operations for a multi-campus university environment spanning Fort Wayne, Crown Point, Gas City, and Lafayette, with responsibility for availability, security, standards, and lifecycle planning.</li>
+                    <li>Manage and mentor a three-person technical team while coordinating infrastructure work with systems, security, facilities, vendors, and campus stakeholders.</li>
+                    <li>Administer and troubleshoot Palo Alto firewalls, GlobalProtect VPN, Aruba/Cisco/HPE switching, Aruba GreenLake wireless, routing, VLANs, DNS/DHCP, and inter-site connectivity.</li>
+                    <li>Own day-to-day operations and modernization of Cisco Unified Communications Manager and Unity voice services while supporting expansion of Microsoft Teams Phone at new campus locations.</li>
+                    <li>Drive replacement of aging switching infrastructure with Aruba 6300 platforms, standardizing VLANs, uplinks, access-port configurations, PoE, and network documentation.</li>
+                    <li>Improve network security through segmentation reviews, firewall and VPN policy changes, encrypted phone configurations, vulnerability remediation, and support for penetration-testing initiatives.</li>
+                    <li>Diagnose complex cross-campus connectivity and voice issues using routing, ARP/MAC, packet/session, DHCP, LLDP, switch-port, firewall, and application-layer evidence rather than trial-and-error changes.</li>
+                    <li>Develop clearer network, port, VLAN, device, and site documentation to reduce operational dependency on tribal knowledge and improve supportability.</li>
+                </ul>
+            </div>
 
-                <!-- Employer -->
-                <div>
-                    <h5 class="fw-bold mb-1">Air National Guard</h5>
+            <div class="role">
+                <div class="role-header">
                     <div>
-                        <span class="fw-bold">Air Propulsion Systems Specialist</span> <span class="text-muted">2008 - 2014</span>
-                        <ul class="ms-3">
-                            <li>Maintained and inspected jet propulsion systems under strict Air Force compliance and safety standards.</li>
-                            <li>Performed advanced diagnostics and overhaul procedures, ensuring 100% operational readiness during active deployments in high-pressure environments.</li>
-                        </ul>
+                        <div class="employer">Iris Family Support Center</div>
+                        <div class="title">Director, IT &amp; Facilities</div>
                     </div>
+                    <div class="dates">2020 - 2026</div>
                 </div>
-
-            </div>
-        </div>
-
-        <!-- Key Achievements -->
-        <div class="container-fluid mb-4 mt-4">
-            <h3>Key Achievements</h3>
-            <div class="border-start border-3 ps-3 ms-1">
-                <ul class="list-unstyled mb-0">
-                    <li>Designed and launched a custom case management system (C#, ASP.NET, MS SQL) to streamline records, reporting, and data integrity.</li>
-                    <li>Built a multi-purpose management platform (Laravel/PHP/MySQL) for training, volunteer hours, and fundraising tracking.</li>
-                    <li>Created user-managed mass SMS communications via Twilio API for rapid, reliable outreach.</li>
-                    <li>Designed and implemented a self-service HR system automating administrative workflows, reducing manual effort and saving ~$55K annually.</li>
-                    <li>Established a formal service desk with ticketing, knowledge base, and metrics to drive continuous improvement and accountability.</li>
+                <ul>
+                    <li>Directed technology, cybersecurity, facilities, physical security, and continuity planning across three aligned organizations, six facilities, and approximately 149 managed endpoints.</li>
+                    <li>Led an IT technician and facilities staff while managing vendors, contracts, procurement, capital projects, budgets, and day-to-day operational priorities.</li>
+                    <li>Owned Microsoft 365, Entra ID, Intune, SharePoint, Teams, endpoint management, firewalls, VPN, switching, Wi-Fi, backup/recovery, access control, surveillance, and core infrastructure standards.</li>
+                    <li>Strengthened identity and endpoint security through MFA, device hardening, access controls, policy development, security awareness, incident response, and audit-focused operating practices.</li>
+                    <li>Modernized collaboration and business processes using Microsoft cloud services, Power Automate, and custom applications, replacing paper-heavy and manual workflows with maintainable digital processes.</li>
+                    <li>Served as technology and facilities advisor to executive leadership, translating risk, lifecycle, compliance, and operational needs into practical investment and project plans.</li>
                 </ul>
             </div>
-        </div>
 
-        <!-- Technical Skills -->
-        <div class="container-fluid mb-4">
-            <h3>Technical Skills</h3>
-            <div class="border-start border-3 ps-3 ms-1">
-                <ul class="list-unstyled mb-0">
-                    <li><strong>Cloud & Identity:</strong> Azure, Entra ID (Azure AD), Intune; M365 administration (Exchange Online, SharePoint Online, Teams, OneDrive).</li>
-                    <li><strong>Security & Networking:</strong> Firewalls, VPN (site/client), MFA, DNS/DHCP, LAN/WAN, monitoring, password managers.</li>
-                    <li><strong>Modern Workplace:</strong> Device provisioning, imaging, GPO/baselines, endpoint management, collaboration suites.</li>
-                    <li><strong>Automation & Development:</strong> Power Automate, PowerShell; C#, ASP.NET, PHP (Laravel), JavaScript; Git, CI fundamentals.</li>
-                    <li><strong>Data & Platforms:</strong> MS SQL, MySQL; virtualization, server OS, print services; asset & inventory management.</li>
+            <div class="role">
+                <div class="role-header">
+                    <div>
+                        <div class="employer">Iris Family Support Center</div>
+                        <div class="title">IT Manager</div>
+                    </div>
+                    <div class="dates">2014 - 2020</div>
+                </div>
+                <ul>
+                    <li>Managed IT operations, systems administration, networking, user support, device lifecycle, and vendor relationships for a growing multi-site nonprofit environment.</li>
+                    <li>Standardized onboarding, device provisioning, imaging, account management, and support processes to improve consistency and reduce administrative overhead.</li>
+                    <li>Planned and executed migrations to Microsoft 365 and other cloud services while maintaining continuity for staff and mission-critical operations.</li>
+                    <li>Implemented stronger governance, disaster-recovery practices, MFA, password management, endpoint controls, and repeatable operating procedures.</li>
+                    <li>Led voice and connectivity improvements that increased reliability while reducing dependence on aging systems and fragmented services.</li>
                 </ul>
             </div>
-        </div>
 
-    </div>
+            <div class="role">
+                <div class="role-header">
+                    <div>
+                        <div class="employer">Iris Family Support Center</div>
+                        <div class="title">Systems Administrator</div>
+                    </div>
+                    <div class="dates">2013 - 2014</div>
+                </div>
+                <ul>
+                    <li>Consolidated and virtualized aging server infrastructure to improve reliability, scalability, recovery, and administration.</li>
+                    <li>Connected offices with secure site-to-site VPN connectivity and standardized firewall, switching, DNS, DHCP, and core network services.</li>
+                    <li>Built internal tools and reporting solutions to reduce repetitive work and improve operational visibility.</li>
+                    <li>Used root-cause analysis, infrastructure upgrades, and proactive monitoring to eliminate recurring outages and stabilize the environment.</li>
+                </ul>
+            </div>
+
+            <div class="role">
+                <div class="role-header">
+                    <div>
+                        <div class="employer">FCC (Adams)</div>
+                        <div class="title">Systems Administrator</div>
+                    </div>
+                    <div class="dates">2010 - 2013</div>
+                </div>
+                <ul>
+                    <li>Administered Windows Server, Active Directory, Exchange, networking, endpoint, and production-support systems in a manufacturing environment.</li>
+                    <li>Implemented monitoring and operational standards to improve visibility, reduce avoidable outages, and support faster troubleshooting.</li>
+                    <li>Developed internal OEE tracking, reporting, and departmental budget tools to improve operational visibility and decision-making.</li>
+                </ul>
+            </div>
+
+            <div class="role">
+                <div class="role-header">
+                    <div>
+                        <div class="employer">Air National Guard</div>
+                        <div class="title">Air Propulsion Systems Specialist</div>
+                    </div>
+                    <div class="dates">2008 - 2014</div>
+                </div>
+                <ul>
+                    <li>Maintained, inspected, diagnosed, and repaired military jet propulsion systems under strict technical, safety, documentation, and readiness standards.</li>
+                    <li>Performed high-accountability maintenance in time-sensitive operational environments, building a disciplined approach to troubleshooting, procedure, and risk management.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Selected Technical Environment</h2>
+            <p class="mb-0">
+                <strong>Networking &amp; Security:</strong> Palo Alto PAN-OS, GlobalProtect, Aruba 6300/5400/2930, HPE/Aruba switching, Cisco switching, Aruba GreenLake wireless, VLANs, routing, VPN, DNS, DHCP, LLDP, network segmentation, packet/session analysis.<br>
+                <strong>Voice &amp; Collaboration:</strong> Cisco Unified Communications Manager, Cisco Unity Connection, Microsoft Teams Phone, Microsoft 365, Teams, SharePoint Online, Exchange Online, OneDrive.<br>
+                <strong>Identity, Endpoint &amp; Automation:</strong> Entra ID, Intune, Group Policy, SCCM/PXE, PowerShell, Power Automate, Git, C#, ASP.NET, PHP/Laravel, JavaScript, Microsoft SQL Server, MySQL.<br>
+                <strong>Operations:</strong> Infrastructure documentation, vulnerability remediation, incident response, vendor management, lifecycle planning, budgeting, service desk operations, business continuity.
+            </p>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="education-entry">
+                <div class="employer">Bachelor of Arts in Information Systems</div>
+                <div class="muted">Indiana Tech, 2013</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
